@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using System.Linq;
 
 namespace RT {
@@ -55,7 +56,7 @@ namespace RT {
 		/// </summary>
 		private IEnumerable<PerformanceTimer> MemberTimers {
 			get {
-				return this.GetType().GetFields()
+				return this.GetType().GetTypeInfo().DeclaredFields
 					.Where(fieldinfo => fieldinfo.FieldType == typeof(PerformanceTimer))
 					.Select(fieldinfo => (PerformanceTimer)fieldinfo.GetValue(this));
 			}
@@ -66,7 +67,7 @@ namespace RT {
 		/// </summary>
 		private IEnumerable<PerformanceTimers> MemberTimerGroups {
 			get {
-				return this.GetType().GetFields()
+				return this.GetType().GetTypeInfo().DeclaredFields
 					.Where(fieldinfo => typeof(PerformanceTimers).IsAssignableFrom(fieldinfo.FieldType))
 					.Select(fieldinfo => (PerformanceTimers)fieldinfo.GetValue(this));
 			}
