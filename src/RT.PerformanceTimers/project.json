@@ -10,7 +10,6 @@
     "repository": {
       "url": "https://github.com/richardtallent/RT.Comb"
     },
-    "iconUrl": "http://www.tallent.us/code/RT.Comb.png",
     "projectUrl": "https://github.com/richardtallent/RT.PerformanceTimers",
     "tags": [ "performance timing timer .NETCore" ]
   },
