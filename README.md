@@ -11,6 +11,9 @@ There is also a mechanism that allows you to create a set of related timers and 
 It could not be any simpler:
 
 ```
+using RT;
+...
+
 var t = new PerformanceTimer("MyTimer");
 t.Start();
 // Do stuff...
@@ -19,7 +22,7 @@ t.Finish();
 Console.WriteLine(t.Name + ": " + t.Count.ToString() + " calls in " + t.TotalDurationMS().ToString() + "ms.");
 ```
 
-The `name` argument in the constructor is optional and can be anything you like. It isn't used by the library itself, it is just there for convenience when you display or serialize your timers.
+The `name` argument in the constructor is optional and can be anything you like. It isn't used by the library itself, it is just there for convenience when you display or log your timers.
 
 If you have a group of timers, you can store them in a class derived from `RT.PerformanceTimers`, which allows you to use reflection to iterate through them:
 
