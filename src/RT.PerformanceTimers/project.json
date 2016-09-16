@@ -1,6 +1,6 @@
 ﻿{
   "name": "RT.PerformanceTimers",
-  "version": "1.0.2-*",
+  "version": "1.0.3-*",
   "copyright": "Copyright 2015-2016 Richard S. Tallent",
   "title": "RT.PerformanceTimers",
   "authors": [ "Richard Tallent" ],
@@ -18,7 +18,7 @@
       "platform": "anycpu"
   },
   "frameworks": {
-    "netstandard1.6": {}
+    "netstandard1.3": {}
   },
   "include": "*.cs",
   "dependencies": {
