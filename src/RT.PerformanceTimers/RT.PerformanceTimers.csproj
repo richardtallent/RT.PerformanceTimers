@@ -3,7 +3,7 @@
     <Description>Utility classes for timing and counting code block execution.</Description>
     <Copyright>Copyright 2015-2017 Richard S. Tallent</Copyright>
     <AssemblyTitle>RT.PerformanceTimers</AssemblyTitle>
-    <VersionPrefix>1.0.4</VersionPrefix>
+    <VersionPrefix>1.0.5</VersionPrefix>
     <Authors>Richard Tallent</Authors>
     <TargetFramework>netstandard1.3</TargetFramework>
     <PlatformTarget>anycpu</PlatformTarget>
