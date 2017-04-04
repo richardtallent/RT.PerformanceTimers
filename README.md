@@ -7,8 +7,8 @@ This library basically creates a wrapper around the `Stopwatch` class to make it
 There is also a mechanism that allows you to create a set of related timers and iterate through them for display or to serialize them to a log without the overhead of dictionary lookups during the code that is being timed.
 
 ## Version History
-1.0.3	2016		Public release
-1.0.4	2017-04-05	Downgraded to csproj, switch to .NET Standard 1.3 (should be compatible with .NET 4.6+ and .NET Core)
+ - 1.0.3	2016		Public release
+ - 1.0.4	2017-04-05	Downgraded to csproj, switch to .NET Standard 1.3 (should be compatible with .NET 4.6+ and .NET Core)
 
 ## How to Use It
 
