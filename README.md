@@ -9,12 +9,13 @@ There is also a mechanism that allows you to create a set of related timers and 
 ## Version History
  - 1.0.4	2016		Public release
  - 1.0.5	2017-04-05	Downgraded to csproj, switch to .NET Standard 1.3 (should be compatible with .NET 4.6+ and .NET Core)
+ - 1.0.6	2018-06-10	Upgraded dependency for reflection
 
 ## How to Use It
 
 It could not be any simpler:
 
-```
+```C#
 using RT;
 ...
 
@@ -30,7 +31,7 @@ The `name` argument in the constructor is optional and can be anything you like.
 
 If you have a group of timers, you can store them in a class derived from `RT.PerformanceTimers`, which allows you to use reflection to iterate through them:
 
-```
+```C#
 class MyTimers : RT.PerformanceTimers {
     public readonly RT.PerformanceTimer MyTimer1 = new RT.PerformanceTimer();
     public readonly RT.PerformanceTimer MyTimer2 = new RT.PerformanceTimer();
@@ -58,13 +59,13 @@ Incidentally, I used `Finish()` rather than `Stop()` simply because it makes Int
 
 In addition to using explicit Start/Finish calls, you can use the `Time(Action action)` method to directly time a specific call.
 
-```
+```C#
 myTimer.Time( () => { 
 	// Do stuff
 });
 ```
 
-I've released this code under an MIT license because I thought it might help someone else. The first version of this was written a *VERY LONG* time ago (before .NET 2.0), so I've just recently switched it to use the `Stopwatch` class rather than relying on direct calls to the Windows system timer. I also recently upgraded it to be a cross-platform library so I can use it in some of my newer personal projects built on .NET Core.
+I've released this code under an MIT license because I thought it might help someone else.
 
 I have some other code (implemented as extension methods) to send the results of an `RT.PerformanceTimers` instance to JSON or a database table, but those bits are so specific to my own stack that I didn't include them here.
 
