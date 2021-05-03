@@ -1,15 +1,17 @@
 # RT.PerformanceTimers
 
-I don't have the fancier versions of Visual Studio with built-in instrumentation, so I wanted to create a *simple*, efficient tool for tracking performance of various bits of code. This library is the result.
+I don't have the fancier versions of Visual Studio with built-in instrumentation, so I wanted to create a _simple_, efficient tool for tracking performance of various bits of code. This library is the result.
 
-This library basically creates a wrapper around the `Stopwatch` class to make it more useful for testing code performance. The primary improvements over `Stopwatch` are that it tracks *how many* times the timer is started, and that it allows you to access the *most recent* elapsed time, not just the overall total.
+This library basically creates a wrapper around the `Stopwatch` class to make it more useful for testing code performance. The primary improvements over `Stopwatch` are that it tracks _how many_ times the timer is started, and that it allows you to access the _most recent_ elapsed time, not just the overall total.
 
 There is also a mechanism that allows you to create a set of related timers and iterate through them for display or to serialize them to a log without the overhead of dictionary lookups during the code that is being timed.
 
 ## Version History
- - 1.0.4	2016		Public release
- - 1.0.5	2017-04-05	Downgraded to csproj, switch to .NET Standard 1.3 (should be compatible with .NET 4.6+ and .NET Core)
- - 1.0.6	2018-06-10	Upgraded dependency for reflection
+
+- 1.0.4 2016 Public release
+- 1.0.5 2017-04-05 Downgraded to csproj, switch to .NET Standard 1.3 (should be compatible with .NET 4.6+ and .NET Core)
+- 1.0.6 2018-06-10 Upgraded dependency for reflection
+- 2.0.0 2021-05-03 Add `TimeAsync()` method, move to .NET 5.0.
 
 ## How to Use It
 
@@ -57,10 +59,14 @@ Originally I used a `Dictionary<string, PerformanceTimer>` for my collections of
 
 Incidentally, I used `Finish()` rather than `Stop()` simply because it makes Intellisense faster by two keystrokes. :)
 
-In addition to using explicit Start/Finish calls, you can use the `Time(Action action)` method to directly time a specific call.
+In addition to using explicit Start/Finish calls, you can use the `Time(Action action)` method to directly time a specific call. Or the async version.
 
 ```C#
-myTimer.Time( () => { 
+myTimer.Time( () => {
+	// Do stuff
+});
+
+await myTimer.TimeAsync( async () => {
 	// Do stuff
 });
 ```

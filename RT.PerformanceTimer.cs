@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace RT {
 
@@ -77,6 +78,20 @@ namespace RT {
 		public PerformanceTimer Time(Action action) {
 			Start();
 			action();
+			Finish();
+			return this;
+		}
+
+		/// <summary>
+		/// Alternative method to separate Start/Finish calls. Use only with complex blocks of code with
+		/// few iterations, otherwise the overhead of passing the delegate action may be significant.
+		/// Returns itself to allow for fluid calls.
+		/// Usage:
+		///		await myTimer.TimeAsync( async () => { Dostuff; } );
+		/// </summary>
+		public async Task<PerformanceTimer> TimeAsync(Func<Task> action) {
+			Start();
+			await action();
 			Finish();
 			return this;
 		}

@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Description>Utility classes for timing and counting code block execution.</Description>
-		<Copyright>Copyright 2015-2018 Richard S. Tallent</Copyright>
+		<Copyright>Copyright 2015-2021 Richard S. Tallent</Copyright>
 		<AssemblyTitle>RT.PerformanceTimers</AssemblyTitle>
-		<VersionPrefix>1.0.6</VersionPrefix>
+		<VersionPrefix>2.0.0</VersionPrefix>
 		<Authors>Richard Tallent</Authors>
-		<TargetFramework>netstandard1.3</TargetFramework>
+		<TargetFramework>net5.0</TargetFramework>
 		<PlatformTarget>anycpu</PlatformTarget>
 		<AssemblyName>RT.PerformanceTimers</AssemblyName>
 		<PackageId>RT.PerformanceTimers</PackageId>
 		<PackageTags>performance timing timer .NETCore</PackageTags>
 		<PackageProjectUrl>https://github.com/richardtallent/RT.PerformanceTimers</PackageProjectUrl>
-		<PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
-		<RepositoryUrl>https://github.com/richardtallent/RT.Comb</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/richardtallent/RT.PerformanceTimers</RepositoryUrl>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.0" />
+		<PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
 	</ItemGroup>
 </Project>
